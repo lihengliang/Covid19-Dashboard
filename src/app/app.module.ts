@@ -10,7 +10,7 @@ import { StatsComponent } from './dashboard/components/stats/stats.component';
 @NgModule({
   declarations: [
     AppComponent,
-    StatsComponent
+    StatsComponent,
   ],
   imports: [
     BrowserModule,
