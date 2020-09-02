@@ -5,12 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './layout/layout.module';
-import { StatsComponent } from './dashboard/components/stats/stats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StatsComponent,
   ],
   imports: [
     BrowserModule,
