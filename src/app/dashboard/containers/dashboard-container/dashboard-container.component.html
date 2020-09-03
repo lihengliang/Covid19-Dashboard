@@ -1,6 +1,6 @@
-<ng-container>
+<ng-container *ngIf="overallSummary$">
   <h1 class="mt-3">
     Statistics Victoria
   </h1>
-  <app-stats></app-stats>
+  <app-stats [Summary]="overallSummary$"></app-stats>
 </ng-container>

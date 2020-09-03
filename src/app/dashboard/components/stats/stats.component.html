@@ -1,41 +1,84 @@
 <div class="container-fluid">
   <div class="row">
-      <div class="col-lg-3 col-sm-6">
-          <div class="card-box bg-orange">
-              <div class="inner">
-                  <h3> 122 </h3>
-                  <p> Cases Today </p>
-              </div>
-              <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+    <div class="col-lg-3 col-sm-6">
+      <div class="card-box bg-orange">
+        <div class="inner">
+          <h3> {{ Summary.todayCases }} </h3>
+          <p> Cases Today </p>
+        </div>
+        <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
       </div>
+    </div>
 
-      <div class="col-lg-3 col-sm-6">
-          <div class="card-box bg-orange">
-              <div class="inner">
-                  <h3> 12 </h3>
-                  <p> Deaths Today </p>
-              </div>
-              <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+    <div class="col-lg-3 col-sm-6">
+      <div class="card-box bg-orange">
+        <div class="inner">
+          <h3> {{ Summary.todayDeaths }} </h3>
+          <p> Deaths Today </p>
+        </div>
+        <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
       </div>
-      <div class="col-lg-3 col-sm-6">
-          <div class="card-box bg-red">
-              <div class="inner">
-                  <h3> 6452 </h3>
-                  <p> Total Cases </p>
-              </div>
-              <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6">
+      <div class="card-box bg-red">
+        <div class="inner">
+          <h3> {{ Summary.cases }} </h3>
+          <p> Total Cases </p>
+        </div>
+        <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
       </div>
-      <div class="col-lg-3 col-sm-6">
-          <div class="card-box bg-red">
-              <div class="inner">
-                  <h3> 652 </h3>
-                  <p> Total Deaths </p>
-              </div>
-              <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6">
+      <div class="card-box bg-red">
+        <div class="inner">
+          <h3> {{ Summary.deaths }} </h3>
+          <p> Total Deaths </p>
+        </div>
+        <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 col-sm-6">
+      <div class="card-box bg-green">
+        <div class="inner">
+          <h3> {{ Summary.todayRecovered }} </h3>
+          <p> Recovered Today </p>
+        </div>
+        <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6">
+      <div class="card-box bg-green">
+        <div class="inner">
+          <h3> {{ Summary.recovered }} </h3>
+          <p> Total Recovered </p>
+        </div>
+        <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6">
+      <div class="card-box bg-green">
+        <div class="inner">
+          <h3> {{ Summary.tests }} </h3>
+          <p> Total Tests </p>
+        </div>
+        <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6">
+      <div class="card-box bg-red">
+        <div class="inner">
+          <h3> {{ Summary.active }} </h3>
+          <p> Active Cases </p>
+        </div>
+        <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
   </div>
 </div>

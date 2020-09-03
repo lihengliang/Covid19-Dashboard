@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-stats',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stats.component.css']
 })
 export class StatsComponent implements OnInit {
+
+  @Input() Summary;
+  // active cases, total recovered
 
   constructor() { }
 
