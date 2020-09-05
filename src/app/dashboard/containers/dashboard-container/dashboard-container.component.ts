@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CovidInfoService } from '../../services/covid-info.service';
 import { Observable } from 'rxjs';
-import { Summary } from '../../models/covid.model';
+import { Summary, Timeline } from '../../models/covid.model';
 
 @Component({
   selector: 'app-dashboard-container',
@@ -11,15 +11,16 @@ import { Summary } from '../../models/covid.model';
 export class DashboardContainerComponent implements OnInit {
 
   overallSummary$: Observable<Summary>;
+  historicalNumbers$: Observable<Timeline>;
 
   constructor(
     private readonly covidInfoService: CovidInfoService
   ) { }
 
   ngOnInit(): void {
-    this.covidInfoService.getSummaryAus().subscribe(res => {
-      this.overallSummary$ = res;
-    });
+    this.overallSummary$ = this.covidInfoService.getSummaryAus();
+
+    this.historicalNumbers$ = this.covidInfoService.getHistoricalAus();
   }
 
 }

@@ -6,6 +6,18 @@ export interface Summary {
     todayDeaths?: number;
     todayRecovered?: number;
     active?: number;
-    critital?: number;
+    critical?: number;
     tests?: number;
+}
+
+export interface Historical {
+    country?: string;
+    province?: string[];
+    timeline?: Timeline;
+}
+
+export interface Timeline {
+    cases?: any[];
+    deaths?: any[];
+    recovered?: any[];
 }

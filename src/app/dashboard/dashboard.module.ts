@@ -5,12 +5,19 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { NewsBoxComponent } from './components/news-box/news-box.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { DashboardContainerComponent } from './containers/dashboard-container/dashboard-container.component';
+import { GraphComponent } from './components/graph/graph.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
-  declarations: [NewsBoxComponent, StatsComponent, DashboardContainerComponent],
+  declarations: [
+    NewsBoxComponent,
+    StatsComponent,
+    DashboardContainerComponent,
+    GraphComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    NgxChartsModule
   ]
 })
 export class DashboardModule { }
