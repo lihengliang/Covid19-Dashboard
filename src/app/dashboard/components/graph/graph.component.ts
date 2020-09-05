@@ -56,19 +56,19 @@ export class GraphComponent implements OnInit {
     if (this.Data) {
       Object.entries(this.Data.cases).forEach(
         ([key, val]) => this.casesData.push({
-          name: key,
+          name: new Date(key),
           value: val
         })
       );
       Object.entries(this.Data.recovered).forEach(
         ([key, val]) => this.recoveredData.push({
-          name: key,
+          name: new Date(key),
           value: val
         })
       );
       Object.entries(this.Data.deaths).forEach(
         ([key, val]) => this.deathsData.push({
-          name: key,
+          name: new Date(key),
           value: val
         })
       );
