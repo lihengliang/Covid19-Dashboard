@@ -15,10 +15,10 @@ export class GraphComponent implements OnInit {
   animations = true;
   xAxis = true;
   yAxis = true;
-  showYAxisLabel = true;
-  showXAxisLabel = true;
-  xAxisLabel = 'Date';
-  yAxisLabel = 'GDP Per Capita';
+  showYAxisLabel = false;
+  showXAxisLabel = false;
+  // xAxisLabel = 'Date';
+  // yAxisLabel = 'Cases';
   timeline = true;
   // view: any[];
   casesData = [];
