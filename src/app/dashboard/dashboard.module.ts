@@ -7,17 +7,20 @@ import { StatsComponent } from './components/stats/stats.component';
 import { DashboardContainerComponent } from './containers/dashboard-container/dashboard-container.component';
 import { GraphComponent } from './components/graph/graph.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+// import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
     NewsBoxComponent,
     StatsComponent,
     DashboardContainerComponent,
-    GraphComponent],
+    GraphComponent
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    NgxChartsModule
+    NgxChartsModule,
+    // MatTabsModule
   ]
 })
 export class DashboardModule { }
