@@ -9,7 +9,8 @@ providedIn: 'root'
 export class MapService {
 
   map: mapboxgl.Map;
-  style = 'mapbox://styles/mapbox/streets-v11';
+  style = 'mapbox://styles/mapbox/light-v10';
+  // style = 'mapbox://styles/mapbox/streets-v11';
   // Australia coordinates
   lat = -27.2744;
   lng = 133.7751;
@@ -29,7 +30,7 @@ export class MapService {
       attributionControl: false
     });
 
-    this.map.setStyle('mapbox://styles/mapbox/light-v10');
+    // this.map.setStyle('mapbox://styles/mapbox/light-v10');
     // this.map.addControl(new mapboxgl.NavigationControl());
     // this.map.scrollZoom.disable();
   }
