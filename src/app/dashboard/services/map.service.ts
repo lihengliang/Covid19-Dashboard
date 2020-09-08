@@ -25,7 +25,8 @@ export class MapService {
       style: this.style,
       zoom: this.zoom,
       center: [this.lng, this.lat],
-      interactive: false
+      interactive: false,
+      attributionControl: false
     });
 
     this.map.setStyle('mapbox://styles/mapbox/light-v10');
