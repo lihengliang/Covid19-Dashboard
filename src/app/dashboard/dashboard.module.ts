@@ -7,6 +7,7 @@ import { StatsComponent } from './components/stats/stats.component';
 import { DashboardContainerComponent } from './containers/dashboard-container/dashboard-container.component';
 import { GraphComponent } from './components/graph/graph.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { MapComponent } from './components/map/map.component';
 // import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     NewsBoxComponent,
     StatsComponent,
     DashboardContainerComponent,
-    GraphComponent
+    GraphComponent,
+    MapComponent
   ],
   imports: [
     CommonModule,

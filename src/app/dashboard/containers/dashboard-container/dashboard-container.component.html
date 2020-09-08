@@ -1,102 +1,47 @@
 <ng-container *ngIf="(overallSummary$ | async) as summary">
-  <h1 class="mt-3">
-    Statistics Australia
-  </h1>
-  <app-stats [Summary]="summary"></app-stats>
-  <hr>
-  <h1 class="mt-3">
-    Daily Change
-  </h1>
-
-  <div class="form-group">
-    <label for="selectState">State</label>
-    <select class="form-control" id="selectState" [(ngModel)]="selectedState" (change)="onSelectState($event)">
-      <option value="all">All</option>
-      <option value="australian capital territory">Australian Capital Territory</option>
-      <option value="new south wales">New South Wales</option>
-      <option value="northern territory">Northern Territory</option>
-      <option value="queensland">Queensland</option>
-      <option value="south australia">South Australia</option>
-      <option value="tasmania">Tasmania</option>
-      <option value="victoria">Victoria</option>
-      <option value="western australia">Western Australia</option>
-    </select>
+  <div class="overall-stats">
+    <h1 class="mt-3">
+      Statistics Australia
+    </h1>
+    <app-stats [Summary]="summary"></app-stats>
   </div>
+  <hr>
+
+  <div class="row">
+    <div class="graph col-sm-6 col-xs-12">
+      <h1 class="mt-3">
+        Daily Change
+      </h1>
+      <div class="form-group">
+        <label for="selectState">State</label>
+        <select class="form-control" id="selectState" [(ngModel)]="selectedState" (change)="onSelectState($event)">
+          <option value="all">All</option>
+          <option value="australian capital territory">Australian Capital Territory</option>
+          <option value="new south wales">New South Wales</option>
+          <option value="northern territory">Northern Territory</option>
+          <option value="queensland">Queensland</option>
+          <option value="south australia">South Australia</option>
+          <option value="tasmania">Tasmania</option>
+          <option value="victoria">Victoria</option>
+          <option value="western australia">Western Australia</option>
+        </select>
+      </div>
+
+      <ng-container *ngIf="(historicalCases$ | async) as historicalCases">
+        <app-graph [Data]="historicalCases"></app-graph>
+      </ng-container>
+    </div>
+
+    <hr>
+
+    <div class="map col-sm-6 col-xs-12">
+      <h1 class="mt-3">
+        Map of Cases
+      </h1>
+      <app-map></app-map>
+    </div>
+  </div>
+
+  <hr>
   
-  <ng-container *ngIf="(historicalCases$ | async) as historicalCases">
-    <app-graph [Data]="historicalCases"></app-graph>
-    <!-- 
-    <mat-tab-group>
-      <mat-tab label="ALL">
-        <ng-template matTabContent>
-          <app-graph [Data]="historicalAus"></app-graph>
-        </ng-template>
-      </mat-tab>
-      
-      <ng-container *ngIf="(historicalVic$ | async) as historicalVic">
-        <mat-tab label="VIC">
-          <ng-template matTabContent>
-            <app-graph [Data]="historicalVic"></app-graph>
-          </ng-template>
-        </mat-tab>
-      </ng-container>
-
-      <ng-container *ngIf="(historicalNsw$ | async) as historicalNsw">
-        <mat-tab label="NSW">
-          <ng-template matTabContent>
-            <app-graph [Data]="historicalNsw"></app-graph>
-          </ng-template>
-        </mat-tab>
-      </ng-container>
-
-      <ng-container *ngIf="(historicalQld$ | async) as historicalQld">
-        <mat-tab label="QLD">
-          <ng-template matTabContent>
-            <app-graph [Data]="historicalQld"></app-graph>
-          </ng-template>
-        </mat-tab>
-      </ng-container>
-
-      <ng-container *ngIf="(historicalNt$ | async) as historicalNt">
-        <mat-tab label="NT">
-          <ng-template matTabContent>
-            <app-graph [Data]="historicalNt"></app-graph>
-          </ng-template>
-        </mat-tab>
-      </ng-container>
-
-      <ng-container *ngIf="(historicalWa$ | async) as historicalWa">
-        <mat-tab label="WA">
-          <ng-template matTabContent>
-            <app-graph [Data]="historicalWa"></app-graph>
-          </ng-template>
-        </mat-tab>
-      </ng-container>
-
-      <ng-container *ngIf="(historicalSa$ | async) as historicalSa">
-        <mat-tab label="SA">
-          <ng-template matTabContent>
-            <app-graph [Data]="historicalSa"></app-graph>
-          </ng-template>
-        </mat-tab>
-      </ng-container>
-
-      <ng-container *ngIf="(historicalAct$ | async) as historicalAct">
-        <mat-tab label="ACT">
-          <ng-template matTabContent>
-            <app-graph [Data]="historicalAct"></app-graph>
-          </ng-template>
-        </mat-tab>
-      </ng-container>
-
-      <ng-container *ngIf="(historicalTas$ | async) as historicalTas">
-        <mat-tab label="TAS">
-          <ng-template matTabContent>
-            <app-graph [Data]="historicalTas"></app-graph>
-          </ng-template>
-        </mat-tab>
-      </ng-container>
-
-    </mat-tab-group> -->
-  </ng-container>
 </ng-container>
