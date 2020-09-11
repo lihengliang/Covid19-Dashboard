@@ -21,3 +21,11 @@ export interface Timeline {
     deaths?: any[];
     recovered?: any[];
 }
+
+export interface StateSummary {
+    cases?: number;
+    recovered?: number;
+    deaths?: number;
+    active?: number;
+    state?: string;
+}

@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from '../../../environments/environment';
+import { CovidInfoService } from './covid-info.service';
+import { StateSummary } from '../models/covid.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +19,17 @@ export class MapService {
   lng = 133.7751;
   zoom = 3.5;
 
-  constructor() {
-    (mapboxgl as any).accessToken = environment.mapbox.accessToken;
+  stateSummary: StateSummary[];
+
+  constructor(
+    private readonly covidInfoService: CovidInfoService
+  ) {
+    (
+      mapboxgl as any).accessToken = environment.mapbox.accessToken;
+
+    this.covidInfoService.getSummaryByState().subscribe(res => {
+      this.stateSummary = res;
+    });
   }
 
   buildMap(): void {
@@ -26,7 +38,7 @@ export class MapService {
       style: this.style,
       zoom: this.zoom,
       center: [this.lng, this.lat],
-      // interactive: false,
+      interactive: false,
       attributionControl: false
     });
 
@@ -88,9 +100,26 @@ export class MapService {
             { hover: true }
           );
 
+          // get stats for hovered state
+          const stateStats = this.stateSummary.filter(item => {
+            return item.state === e.features[0].properties.STATE_NAME;
+          });
+
           popup
             .setLngLat(e.lngLat)
-            .setText(e.features[0].properties.STATE_NAME)
+            .setHTML(
+              `
+              <strong>${e.features[0].properties.STATE_NAME}</strong>
+              <br>
+              Cases: ${stateStats[0].cases}
+              <br>
+              Active: ${stateStats[0].active}
+              <br>
+              Deaths: ${stateStats[0].deaths}
+              <br>
+              Recovered: ${stateStats[0].recovered}
+              `
+              )
             .addTo(this.map);
         }
       });

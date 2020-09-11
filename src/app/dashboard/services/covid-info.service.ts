@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
-import { Summary, Historical, Timeline } from '../models/covid.model';
+import { Summary, Historical, Timeline, StateSummary } from '../models/covid.model';
 
 @Injectable({
   providedIn: 'root'
@@ -52,6 +52,20 @@ export class CovidInfoService {
         deaths: data.timeline.deaths,
         recovered: data.timeline.recovered
       }))
+    );
+  }
+
+  getSummaryByState(): Observable<StateSummary> {
+    return this.httpClient.get(`${this.mathdroUrl}/countries/australia/confirmed`).pipe(
+      map((list: any) =>
+        list.map(data =>
+          ({
+            cases: data.confirmed,
+            deaths: data.deaths,
+            recovered: data.recovered,
+            active: data.active,
+            state: data.provinceState
+          })))
     );
   }
 }
