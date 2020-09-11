@@ -55,7 +55,7 @@ export class CovidInfoService {
     );
   }
 
-  getSummaryByState(): Observable<StateSummary> {
+  getSummaryByState(): Observable<StateSummary[]> {
     return this.httpClient.get(`${this.mathdroUrl}/countries/australia/confirmed`).pipe(
       map((list: any) =>
         list.map(data =>
