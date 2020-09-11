@@ -13,6 +13,7 @@ export class CovidInfoService {
   private readonly diseaseShUrl = 'https://corona.lmao.ninja/v3/covid-19';
   // https://disease.sh/v3/covid-19/historical/australia?lastdays=all
   // https://covid19.mathdro.id/api/countries/australia/confirmed
+  // https://opendata.ecdc.europa.eu/covid19/casedistribution/json/
 
   constructor(
     private readonly httpClient: HttpClient
