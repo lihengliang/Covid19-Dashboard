@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { NewsSummary } from '../../models/covid.model';
 
 @Component({
   selector: 'app-news-box',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsBoxComponent implements OnInit {
 
+  @Input() Title: string;
+  @Input() NewsData: NewsSummary;
   constructor() { }
 
   ngOnInit(): void {
