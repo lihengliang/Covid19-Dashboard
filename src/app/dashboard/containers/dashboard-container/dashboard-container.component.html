@@ -8,14 +8,14 @@
   <hr>
 
   <div class="row">
-    <ng-container *ngIf="(newsArticlesAus$ | async) as newsArticlesAus">
+    <ng-container *ngIf="(newsArticlesWeek$ | async) as newsArticlesWeek">
       <div class="news col-sm-6 col-xs-12">
-      <app-news-box [Title]="'Covid-19 News Australia'" [NewsData]="newsArticlesAus"></app-news-box>
+      <app-news-box [Title]="'Top Covid-19 News this week'" [NewsData]="newsArticlesWeek"></app-news-box>
       </div>
     </ng-container>
-    <ng-container *ngIf="(newsArticlesWorld$ | async) as newsArticlesWorld">
+    <ng-container *ngIf="(newsArticlesLatest$ | async) as newsArticlesLatest">
       <div class="news col-sm-6 col-xs-12">
-      <app-news-box [Title]="'Covid-19 News World'" [NewsData]="newsArticlesWorld"></app-news-box>
+      <app-news-box [Title]="'Latest Covid-19 News'" [NewsData]="newsArticlesLatest"></app-news-box>
       </div>
     </ng-container>
   </div>

@@ -14,9 +14,9 @@ export class DashboardContainerComponent implements OnInit {
 
   historicalCases$: Observable<Timeline>;
 
-  newsArticlesAus$: Observable<NewsSummary>;
+  newsArticlesWeek$: Observable<NewsSummary>;
 
-  newsArticlesWorld$: Observable<NewsSummary>;
+  newsArticlesLatest$: Observable<NewsSummary>;
 
   selectedState = 'all';
 
@@ -27,8 +27,8 @@ export class DashboardContainerComponent implements OnInit {
   ngOnInit(): void {
     this.overallSummary$ = this.covidInfoService.getSummaryAus();
     this.historicalCases$ = this.covidInfoService.getHistoricalAus();
-    this.newsArticlesAus$ = this.covidInfoService.getCovidNewsAus();
-    this.newsArticlesWorld$ = this.covidInfoService.getCovidNewsWorld();
+    this.newsArticlesWeek$ = this.covidInfoService.getCovidNewsWeek();
+    this.newsArticlesLatest$ = this.covidInfoService.getCovidNewsLatest();
   }
 
   onSelectState(event: any): void {
