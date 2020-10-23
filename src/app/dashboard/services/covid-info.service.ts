@@ -15,7 +15,7 @@ export class CovidInfoService {
 
   private readonly mathdroUrl = 'https://covid19.mathdro.id/api';
   private readonly diseaseShUrl = 'https://corona.lmao.ninja/v3/covid-19';
-  private readonly newsUrl = 'http://newsapi.org/v2';
+  private readonly newsUrl = 'https://newsapi.org/v2';
   // https://disease.sh/v3/covid-19/historical/australia?lastdays=all
   // https://covid19.mathdro.id/api/countries/australia/confirmed
   // https://opendata.ecdc.europa.eu/covid19/casedistribution/json/
