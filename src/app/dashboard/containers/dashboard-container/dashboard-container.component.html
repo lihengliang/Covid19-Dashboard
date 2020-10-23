@@ -8,6 +8,19 @@
   <hr>
 
   <div class="row">
+    <ng-container *ngIf="(newsArticlesWeek$ | async) as newsArticlesWeek">
+      <div class="news col-sm-6 col-xs-12">
+      <app-news-box [Title]="'Top Covid-19 News this week'" [NewsData]="newsArticlesWeek"></app-news-box>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="(newsArticlesLatest$ | async) as newsArticlesLatest">
+      <div class="news col-sm-6 col-xs-12">
+      <app-news-box [Title]="'Latest Covid-19 News'" [NewsData]="newsArticlesLatest"></app-news-box>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="row">
     <div class="graph col-sm-6 col-xs-12">
       <h1 class="mt-3">
         Daily Change

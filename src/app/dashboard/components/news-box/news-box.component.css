@@ -1,0 +1,11 @@
+.list-group {
+  max-height: 300px;
+  margin-bottom: 10px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-box {
+  overflow-y: scroll;
+  height: 300px;
+}
