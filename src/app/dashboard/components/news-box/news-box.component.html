@@ -1,1 +1,14 @@
-<p>news-box works!</p>
+<div class="card">
+  <h5 class="card-header">{{ Title }}</h5>
+  <div class="card-body">
+    <ul class="nav nav-pills nav-stacked scroll-box">
+      <li *ngFor="let article of NewsData.articles" class="nav-item w-100">
+        <strong>{{ article.source.name }}</strong>
+        <br>
+        <a href="{{article.url}}" target="_blank">{{ article.title }}</a>
+        <br>
+        <p>{{ article.description }}</p>
+      </li>
+    </ul>
+  </div>
+</div>

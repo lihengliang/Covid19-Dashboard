@@ -29,3 +29,24 @@ export interface StateSummary {
     active?: number;
     state?: string;
 }
+
+export interface NewsSummary {
+    status?: string;
+    totalResults?: number;
+    articles?: Article;
+}
+
+export interface Article {
+    source?: NewsSource;
+    author?: string;
+    title?: string;
+    url?: string;
+    urlToImage?: string;
+    publishedAt?: string;
+    content?: string;
+}
+
+export interface NewsSource {
+    id?: string;
+    name?: string;
+}

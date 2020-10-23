@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CovidInfoService } from '../../services/covid-info.service';
 import { Observable } from 'rxjs';
-import { Summary, Timeline } from '../../models/covid.model';
+import { Summary, Timeline, NewsSummary } from '../../models/covid.model';
 
 @Component({
   selector: 'app-dashboard-container',
@@ -14,6 +14,10 @@ export class DashboardContainerComponent implements OnInit {
 
   historicalCases$: Observable<Timeline>;
 
+  newsArticlesWeek$: Observable<NewsSummary>;
+
+  newsArticlesLatest$: Observable<NewsSummary>;
+
   selectedState = 'all';
 
   constructor(
@@ -23,6 +27,8 @@ export class DashboardContainerComponent implements OnInit {
   ngOnInit(): void {
     this.overallSummary$ = this.covidInfoService.getSummaryAus();
     this.historicalCases$ = this.covidInfoService.getHistoricalAus();
+    this.newsArticlesWeek$ = this.covidInfoService.getCovidNewsWeek();
+    this.newsArticlesLatest$ = this.covidInfoService.getCovidNewsLatest();
   }
 
   onSelectState(event: any): void {
